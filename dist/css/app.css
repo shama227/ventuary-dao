@@ -8578,6 +8578,132 @@ body {
   }
 }
 
+.footer__top {
+  opacity: 0.5;
+  transition: 0.2s;
+  color: white;
+  text-decoration: none !important;
+  outline: none !important;
+  height: 40px;
+  padding-left: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.footer__top:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: url("/img/footer/arrow.svg") no-repeat center;
+}
+
+.footer__top:hover {
+  opacity: 1;
+}
+
+.footer__top__wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.footer__logo {
+  padding-top: 10px;
+}
+
+.footer__social {
+  list-style: none;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 0px;
+}
+
+@media (min-width: 480px) {
+  .footer__social {
+    justify-content: center;
+  }
+}
+
+.footer__social__wrapper {
+  padding-bottom: 15px;
+}
+
+@media (min-width: 480px) {
+  .footer__social__wrapper {
+    padding-bottom: 50px;
+  }
+}
+
+.footer__social-item {
+  list-style: none;
+  padding: 2.5px;
+}
+
+@media (min-width: 480px) {
+  .footer__social-item {
+    padding: 10px;
+  }
+}
+
+.footer__social-link {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  color: white;
+  text-decoration: none !important;
+  outline: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.footer__social-link:hover {
+  opacity: 1;
+}
+
+.footer__line {
+  padding-top: 20px;
+  padding-bottom: 18px;
+  text-align: left;
+  background: #000;
+  font-size: 12px;
+}
+
+@media (min-width: 480px) {
+  .footer__line {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__line {
+    font-size: 1rem;
+    padding-top: 30px;
+    padding-bottom: 28px;
+  }
+}
+
+.footer__line img {
+  height: 13px;
+}
+
+@media (min-width: 768px) {
+  .footer__line img {
+    height: 17px;
+  }
+}
+
 body {
   min-height: 100vh;
   display: flex;

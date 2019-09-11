@@ -1,4 +1,100 @@
 .footer{
+  &__top{
+    opacity: 0.5;
+    transition: .2s;
+    color: white;
+    text-decoration: none!important;
+    outline: none!important;
+    height: 40px;
+    padding-left: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: url("/img/footer/arrow.svg") no-repeat center;
+    }
+    &:hover{
+      opacity: 1;
+    }
+    &__wrapper{
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+  &__logo{
+    padding-top: 10px;
+  }
+  &__social{
+    list-style: none;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    @include media-breakpoint-up(xs){
+      justify-content: center;
+    }
+    &__wrapper{
+      padding-bottom: 15px;
+      @include media-breakpoint-up(xs){
+        padding-bottom: 50px;
+      }
+    }
+  }
+  &__social-item{
+    list-style: none;
+    padding: 2.5px;
+    @include media-breakpoint-up(xs){
+      padding: 10px;
+    }
+  }
+  &__social-link{
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    color: white;
+    text-decoration: none!important;
+    outline: none!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: .2s;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  &__line{
+    padding-top: 20px;
+    padding-bottom: 18px;
+    text-align: left;
+    background: #000;
+    font-size: 12px;
+    @include media-breakpoint-up(xs){
+      text-align: center;
+    }
+    @include media-breakpoint-up(md){
+      font-size: 1rem;
+      padding-top: 30px;
+      padding-bottom: 28px;
+    }
+    img{
+      height: 13px;
+      @include media-breakpoint-up(md){
+        height: 17px;
+      }
+    }
+  }
 }
 
 body{
