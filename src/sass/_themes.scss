@@ -17,6 +17,16 @@
         background: $primary_;
       }
     }
+    @if($primary_){
+      .text-#{$theme}{
+        color: $primary_;
+      }
+    }
+    @if($primary_){
+      .bg-#{$theme}{
+        background-color: $primary_;
+      }
+    }
 
   }
 }
