@@ -1,8 +1,9 @@
 
 
 .section{
-  margin-bottom: 25px;
-  @include media-breakpoint-up(xs){
+  padding-bottom: 100px;
+  @include media-breakpoint-up(sm){
+    padding-bottom: 0;
     margin-bottom: 50px;
   }
   @include media-breakpoint-up(lg){
@@ -12,3 +13,4 @@
 
 @import "first-screen";
 @import "outline";
+@import "box";

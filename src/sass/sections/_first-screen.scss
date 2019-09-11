@@ -1,5 +1,8 @@
 .section--fs{
   min-height: 100vh;
+  &__header{
+    margin-bottom: 20px;
+  }
   &__text, &__space{
     position: relative;
     width: 100%;

@@ -19,12 +19,12 @@
     }
     @if($primary_){
       .text-#{$theme}{
-        color: $primary_;
+        color: $primary_!important;
       }
     }
     @if($primary_){
       .bg-#{$theme}{
-        background-color: $primary_;
+        background-color: $primary_!important;
       }
     }
 

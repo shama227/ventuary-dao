@@ -33,6 +33,11 @@ body{
     }
 }
 
-
+.container, .container-fluid{
+    @include media-breakpoint-down(xs){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 
 
