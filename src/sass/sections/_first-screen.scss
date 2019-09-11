@@ -1,0 +1,75 @@
+.section--fs{
+  min-height: 100vh;
+  &__text, &__space{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    align-items: flex-start;
+    @include media-breakpoint-up(xxl){
+      align-items: center;
+    }
+  }
+  &__text{
+    flex: 0 0 320px;
+    max-width: 320px;
+    padding-right: 25px;
+    @include media-breakpoint-between(xl, xxl){
+      align-items: flex-end;
+      padding-bottom: 27px;
+    }
+    @include media-breakpoint-up(xs){
+      flex: 0 0 360px;
+      max-width: 360px;
+      padding-right: 15px;
+    }
+    @include media-breakpoint-up(lg){
+      padding-top: 40px;
+      flex: 0 0 57%;
+      max-width: 57%;
+      mark{
+        background-color: transparent;
+      }
+    }
+    @include media-breakpoint-up(xl){
+      flex: 0 0 57%;
+      max-width: 57%;
+      padding-right: 11%;
+    }
+    @include media-breakpoint-up(xxl){
+      flex: 0 0 48%;
+      max-width: 48%;
+      padding-top: 0;
+      padding-right: 0;
+    }
+    @include media-breakpoint-up(fhd){
+      flex: 0 0 39%;
+      max-width: 39%;
+    }
+  }
+  &__space{
+    @include media-breakpoint-down(sm){
+      position: absolute;
+      top: 0;
+      right: 20px;
+      width: 56.25vw;
+      height: auto;
+      z-index: -1;
+    }
+    @include media-breakpoint-up(md){
+      flex: 0 0 315px;
+      max-width: 315px;
+      margin-right: auto;
+    }
+    @include media-breakpoint-up(xxl){
+      flex: 0 0 525px;
+      max-width: 525px;
+    }
+    @include media-breakpoint-up(fhd){
+      margin-left: auto;
+      flex: 0 0 715px;
+      max-width: 715px;
+    }
+  }
+}

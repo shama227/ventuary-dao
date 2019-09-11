@@ -1,0 +1,22 @@
+
+
+@each $theme, $themeValue in $themes {
+  $theme-colors_: map_get($themeValue, "theme-colors");
+  $btns-primary: map_get($themeValue, "btns-primary");
+  @if($theme-colors_){
+    $primary_: map_get($theme-colors_, "primary");
+    //.theme-#{$theme}{
+    //  @if($primary_){
+    //    //mark, .mark{
+    //    //  background: $primary_;
+    //    //}
+    //  }
+    //}
+    @if($primary_){
+      .mark-#{$theme}{
+        background: $primary_;
+      }
+    }
+
+  }
+}

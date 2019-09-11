@@ -1,0 +1,52 @@
+//В макете font-size html = 18 px, но переменную не использую, чтобы иметь возможность
+// изменив font-size html, эта функция не изменила отдоваемые значения, и тем самым значение rem изменится по всему сайту
+@function rem($px) {
+  @return #{($px/16)}rem;
+}
+@function lh($line-height-px, $font-size-px) {
+  @return ($line-height-px/$font-size-px);
+}
+@function percentageRate($width-px, $height-px) {
+  @return ($height-px/$width-px * 100%);
+}
+
+$grid-gutter-width-categories:  60px;
+
+@mixin make-container-categories($gutter: $grid-gutter-width-categories) {
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+@mixin make-row-categories($gutter: $grid-gutter-width-categories + 30px) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
+}
+@mixin make-grid-columns-categories($columns: $grid-columns, $gutter: $grid-gutter-width-categories) {
+  @for $i from 1 through $columns {
+    .col-lg-#{$i} {
+      @include media-breakpoint-up(lg)
+      {
+        padding-right: $gutter / 2;
+        padding-left: $gutter / 2;
+      }
+    }
+    .col-xl-#{$i} {
+      @include media-breakpoint-up(xl)
+      {
+        padding-right: $gutter / 2;
+        padding-left: $gutter / 2;
+      }
+    }
+    .col-xxl-#{$i} {
+      @include media-breakpoint-up(xxl)
+      {
+        padding-right: $gutter / 2;
+        padding-left: $gutter / 2;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  position: relative;
+  color: transparent!important;
+  font-weight: 500;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  @include hover-focus {
+    text-decoration: none;
+  }
+  &:hover, &:focus{
+    &:before{
+      font-weight: 500;
+    }
+  }
+  &:before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: $nav-link-padding-y $nav-link-padding-x;
+    color: white;
+    font-weight: 300;
+  }
+  &--waves-keeper{
+    text-decoration: none!important;
+    &__label{
+      display: inline-block;
+      padding-right: $nav-link-padding-x*2;
+    }
+    &:hover{
+      .btn{
+        opacity: .7;
+      }
+    }
+    &:active{
+      .btn{
+        opacity: .5;
+      }
+    }
+  }
+}

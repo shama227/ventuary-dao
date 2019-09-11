@@ -1,0 +1,25 @@
+.btn{
+  display: inline-block;
+  min-width: 160px;
+  min-height: 40px;
+  height: auto;
+  padding: 0 20px;
+  line-height: 40px;
+  border-radius: 2px;
+  font-size: inherit;
+  white-space: nowrap;
+}
+.btn-block{
+  display: block;
+}
+.btn-primary{
+  background: white;
+  color: black;
+  transition: .2s ease;
+  &:hover{
+    opacity: .7;
+  }
+  &:active{
+    opacity: .5;
+  }
+}
