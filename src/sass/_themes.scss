@@ -16,17 +16,27 @@
       .mark-#{$theme}{
         background: $primary_;
       }
-    }
-    @if($primary_){
       .text-#{$theme}{
         color: $primary_!important;
       }
-    }
-    @if($primary_){
       .bg-#{$theme}{
         background-color: $primary_!important;
       }
+
+      .section--#{$theme}{
+        .section--faq{
+          &__list-link{
+            &:before{
+              background: $primary_!important;
+            }
+          }
+        }
+      }
+
+
     }
+
+
 
   }
 }

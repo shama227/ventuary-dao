@@ -178,7 +178,7 @@ a {
 
 a:hover {
   color: #d9d9d9;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:not([href]):not([tabindex]) {
@@ -8610,6 +8610,10 @@ body {
   }
 }
 
+.section--box__link {
+  text-decoration: none !important;
+}
+
 .section--box__link:hover {
   color: white;
   opacity: 0.75;
@@ -8722,6 +8726,49 @@ body {
     flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%;
   }
+}
+
+.section--faq {
+  min-height: 550px;
+}
+
+.section--faq__header {
+  margin-bottom: 50px;
+}
+
+.section--faq__list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.section--faq__list-item {
+  list-style: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.section--faq__list-link {
+  display: inline-block;
+  padding: 6px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.section--faq__list-link:before {
+  content: "";
+  position: absolute;
+  left: -53px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #0BC91F;
+  transition: 0.2s ease;
+  z-index: -1;
+}
+
+.section--faq__list-link.active:before {
+  width: 100px;
 }
 
 .footer__top {
@@ -8877,6 +8924,10 @@ body {
   background-color: #0BC91F !important;
 }
 
+.section--green .section--faq__list-link:before {
+  background: #0BC91F !important;
+}
+
 .mark-pink {
   background: #BB6BD9;
 }
@@ -8889,6 +8940,10 @@ body {
   background-color: #BB6BD9 !important;
 }
 
+.section--pink .section--faq__list-link:before {
+  background: #BB6BD9 !important;
+}
+
 .mark-blue {
   background: #4D49FF;
 }
@@ -8899,5 +8954,9 @@ body {
 
 .bg-blue {
   background-color: #4D49FF !important;
+}
+
+.section--blue .section--faq__list-link:before {
+  background: #4D49FF !important;
 }
 

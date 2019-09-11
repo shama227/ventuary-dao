@@ -75,7 +75,7 @@ $h3-font-weight:                300;
 $link-color:                              white;
 $link-decoration:                         none;
 $link-hover-color:                        darken($link-color, 15%);
-$link-hover-decoration:                   none;
+$link-hover-decoration:                   underline;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15%;
 

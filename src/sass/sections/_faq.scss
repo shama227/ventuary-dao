@@ -1,0 +1,38 @@
+.section--faq{
+  min-height: 550px;
+  &__header{
+    margin-bottom: 50px;
+  }
+  &__list{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  &__list-item{
+    list-style: none;
+    display: block;
+    margin-bottom: 5px;
+  }
+  &__list-link{
+    display: inline-block;
+    padding: 6px 0;
+    position: relative;
+    cursor: pointer;
+    &:before{
+      content: '';
+      position: absolute;
+      left: -53px;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background: $primary;
+      transition: .2s ease;
+      z-index: -1;
+    }
+    &.active{
+      &:before{
+        width: 100px;
+      }
+    }
+  }
+}
