@@ -35,6 +35,17 @@
           color: white;
         }
 
+        .btn-outline-primary{
+          color: $primary_ !important;
+          border-color: $primary_ !important;
+          &:hover{
+            border-color: rgba($primary_, .5) !important;
+          }
+          &:active{
+            border-color: rgba($primary_, .5) !important;
+            color: rgba($primary_, .5) !important;
+          }
+        }
         hr {
           border-color: $primary_ !important;
         }

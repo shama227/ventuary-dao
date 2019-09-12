@@ -10,12 +10,6 @@
 
 // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-// try {
-//   window.Popper = require('popper.js').default;
-//   window.$ = window.jQuery = require('jquery');
-//
-//   require('bootstrap');
-// } catch (e) {}
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -36,3 +30,8 @@
 
 
 window.$ = window.jQuery = require('./jquery-3.4.1.slim.min');
+window.Modal = require('bootstrap/js/dist/modal');
+// try {
+//   window.Popper = require('popper.js').default;
+//
+// } catch (e) {}

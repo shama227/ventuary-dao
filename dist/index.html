@@ -29,7 +29,7 @@
         <ul class="navbar-nav order-2 order-lg-1 mr-auto">
           <li class="nav-item">
             <!--Обязательно укажите data-label в точности, это распорка,
-            чтобы не скокала строка при hover изменении font-weight-->
+            чтобы не скакала строка при hover изменении font-weight-->
             <a class="nav-link" target="_blank"
                href="https://blog.wavesplatform.com/waves-labs-to-use-dao-as-sandbox-for-grant-programs-d4b58413cb50"
                data-label="About">
@@ -55,7 +55,7 @@
           </li>
         </ul>
         <div class="navbar-nav navbar-nav--login order-1 order-lg-2">
-          <a target="_blank" href="https://beta.ventuary.space/projects/featured" class="nav-link--waves-keeper" data-label="Login">
+          <a target="_blank" href="https://beta.ventuary.space/projects/featured" class="nav-link--waves-keeper js-link--waves-keeper" data-label="Login">
             <span class="nav-link--waves-keeper__label">Login<span class="d-none d-lg-inline"> with</span></span>
             <div class="btn btn-primary d-none d-lg-inline-block">
               <img width="111" height="17" src="/img/icons/waves-keeper.svg" alt="waves-keeper">
@@ -226,7 +226,6 @@
     </div>
 
   </section>
-
   <section id="section--create" class="section section--outline d-flex">
     <div class="section--outline__line bg-blue"></div>
     <div class="container d-flex align-items-center">
@@ -1063,9 +1062,145 @@
     </div>
   </div>
 </footer>
+<!-- Modal -->
+<div class="modal fade modal-guide" id="guide" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div data-dismiss="modal" class="modal-close"></div>
+      <div class="modal-body section--green">
+        <div class="modal-guide__h1 text-center">
+          Welcome to Ventuary DAO!
+        </div>
+
+        <div class="modal-guide__slider" id="modal-guide-slider">
+
+          <div>
+            <div class="modal-guide__h2 text-center">
+              Please install Waves Keeper first
+            </div>
+            <p class="text-center">
+              It is a browser extension that allows to create your Waves wallet  and manage your private keys to interact with our platform
+            </p>
+            <p class="text-center text-muted small font-weight-bolder mb-2">
+              Available in Chrome, Firefox, Edge, Opera and Brave
+            </p>
+            <div class="text-center modal-guide__mb">
+              <img class="img-fluid" width="282" height="50" src="/img/sections/guide/browsers.svg" alt="Available in Chrome, Firefox, Edge, Opera and Brave">
+            </div>
+            <div class="text-center">
+              <a target="_blank" href="https://wavesplatform.com/technology/keeper" class="btn btn-outline-primary">
+                Install Waves Keeper
+              </a>
+            </div>
+            <div class="d-flex justify-content-center">
+              <ul class="modal-guide__list">
+                <li>
+                  <a class="modal-guide__list-icon modal-guide__list-icon--watch" target="_blank" href="https://www.youtube.com/playlist?list=UUOTTc5eiq7nAYF47kDD3Rdg">
+                    Watch video instructions
+                  </a>
+                </li>
+                <li>
+                  <a class="modal-guide__list-icon modal-guide__list-icon--help" target="_blank" href="https://t.me/ventuary_dao">
+                    Ask for help in Telegram group
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="modal-guide__h2 text-center">
+              Check Waves Keeper permissions
+            </div>
+            <div class="row no-gutters mb-2">
+              <div class="col pt-2">
+                <div class="mb-2">
+                  If you haven’t yet given Waves Keeper access  to Ventuary DAO, you will need to do the following steps:
+                </div>
+                <ol class="pl-3">
+                  <li>
+                    Open Waves Keeper.
+                  </li>
+                  <li>
+                    Go to Settings menu (in the right upper corner)
+                  </li>
+                  <li>
+                    Open Permissions Control menu
+                  </li>
+                  <li>
+                    Give access to beta.ventuary.space by clicking a power button icon on the left
+                  </li>
+                </ol>
+              </div>
+              <div class="col-auto d-none d-sm-block">
+                <img class="img-fluid" width="179" height="217" src="/img/sections/guide/app.svg" alt="">
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <ul class="modal-guide__list">
+                <li>
+                  <a class="modal-guide__list-icon modal-guide__list-icon--watch" target="_blank" href="https://www.youtube.com/playlist?list=UUOTTc5eiq7nAYF47kDD3Rdg">
+                    Watch video instructions
+                  </a>
+                </li>
+                <li>
+                  <a class="modal-guide__list-icon modal-guide__list-icon--help" target="_blank" href="https://t.me/ventuary_dao">
+                    Ask for help in Telegram group
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="modal-guide__h2 text-center">
+              Finally, request an invite
+            </div>
+            <p class="text-center">
+              You require an invitation link to join us. There are two ways to get it:
+            </p>
+            <div class="text-center text-green">
+              Ask for invitation in our Telegram group
+            </div>
+            <div class="text-center text-muted">
+              or
+            </div>
+            <div class="text-center text-green mb-4 pb-2">
+              Fill in the invitation request here
+            </div>
+            <p class="text-muted small">
+              When you receive your personal invite link, you can use it only once  to register on Ventuary DAO.
+              <br>
+              <br>
+              Last but not least: before you click on your invite link to register, make sure that your active Waves Keeper address is on mainnet and that its balance is equal to at least 0.01 WAVES — you will need to spend a 0.009 fee to register your profile on the blockchain
+            </p>
+            <div class="text-center text-green">
+              Learn how to fund your Waves wallet
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row no-gutters pt-4">
+          <div class="col pr-1">
+            <div class="btn btn-link js-control-guide d-none" data-to="prev">
+              Back
+            </div>
+          </div>
+          <div class="col-auto px-2">
+            <div class="btn btn-primary js-control-guide" data-to="next">
+              Got it!
+            </div>
+          </div>
+          <div class="col d-none d-sm-block"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script async defer src="/js/app.js"></script>
 <script>
-  window.isLoginWavesKeeper = false;
+  window.isShowModalGuideWavesKeeper = true;
 </script>
 </body>
 </html>

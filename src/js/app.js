@@ -50,6 +50,7 @@ if ($sliders.length) {
   }, '.js-control')
 }
 
+
 const smoothScroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   easing: 'easeInOutCubic',
@@ -66,3 +67,53 @@ $(document).on('click', '.js-top', function(e) {
 });
 
 navbar(smoothScrollMoment)
+
+if(document.getElementById('modal-guide-slider')){
+  let slide = tns({
+    "loop": false,
+    "autoWidth": false,
+    "items": 1,
+    "gutter": 0,
+    "touch": false,
+    "mouseDrag": false,
+    "center": false,
+    "swipeAngle": false,
+    "controls": false,
+    "nav": false,
+    "navAsThumbnails": false,
+    "autoplay": false,
+    "container": '#modal-guide-slider',
+    "speed": 400
+  })
+  slide.events.on('indexChanged', function (v) {
+    let $prev = $('.js-control-guide[data-to="prev"]')
+    let $next = $('.js-control-guide[data-to="next"]')
+    if(v.index === 0){
+      $prev.addClass('d-none')
+    }else{
+      $prev.removeClass('d-none')
+    }
+    if(v.index === 2){
+      $next.addClass('d-none')
+    }else{
+      $next.removeClass('d-none')
+    }
+  });
+  $(document).on({
+    click: function (){
+      let to = $(this).data('to')
+      if(to !== undefined){
+        slide.goTo(to);
+      }
+    },
+  }, '.js-control-guide')
+}
+
+$(document).on('click', '.js-link--waves-keeper', function(e) {
+  if(window.isShowModalGuideWavesKeeper){
+    e.preventDefault();
+    Modal._jQueryInterface.call($('#guide'), Modal._config, this)
+  }
+});
+// Modal._jQueryInterface.call($('#guide'), Modal._config, $('.js-link--waves-keeper')[0])
+
