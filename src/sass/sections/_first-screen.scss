@@ -6,11 +6,93 @@
   flex-direction: column;
   @include media-breakpoint-up(lg){
     padding-top: 80px;
+    max-height: 900px;
+  }
+  &__nav{
+    position: relative;
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 30px;
+    @include media-breakpoint-up(lg){
+      flex: 0 0 41%;
+      max-width: 41%;
+      margin-top: -40px;
+    }
+    @include media-breakpoint-up(xxl){
+      margin-top: 0;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  &__nav-label{
+    @include media-breakpoint-up(lg){
+      padding-left: 50px;
+    }
+    margin-bottom: 4px;
+  }
+  &__nav-list{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  &__nav-item{
+    list-style: none;
+    margin-bottom: 2px;
+  }
+  &__nav-link{
+    position: relative;
+    font-weight: 500;
+    line-height: 1.2;
+    color: white;
+    padding-left: 50px;
+    padding-right: 10px;
+    display: block;
+    height: 55px;
+    text-decoration: none!important;
+    outline: none!important;
+    opacity: 1!important;
+    @include font-size(44px);
+    @include media-breakpoint-up(xl){
+      @include font-size(46px);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: -70px;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background: $primary;
+      transition: .4s ease-in;
+      z-index: -1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      background: url("/img/sections/first-screen/big-arrow.svg") no-repeat center;
+      background-size: contain;
+    }
+    &:hover{
+      &:before {
+        width: 150px;
+      }
+    }
   }
   &__follow-us{
+    width: 100%;
+    flex: 0 0 59%;
+    max-width: 59%;
+    @include media-breakpoint-up(xxl){
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
     display: none;
     align-items: center;
-    margin-top: auto;
     @include media-breakpoint-up(lg){
       display: flex;
     }

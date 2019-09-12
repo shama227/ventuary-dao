@@ -45,7 +45,11 @@
         color: white;
       }
 
-
+      .section--fs__nav-link--#{$theme}{
+        &:before {
+          background: $primary_ !important;
+        }
+      }
     }
 
 
