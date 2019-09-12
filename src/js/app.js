@@ -1,6 +1,8 @@
 require('./bootstrap');
+require('./bootstrap');
 
 import { tns } from "tiny-slider/src/tiny-slider"
+import SmoothScroll from "smooth-scroll/dist/smooth-scroll.polyfills.min"
 
 let $sliders = $('.js-section-slider')
 if ($sliders.length) {
@@ -46,3 +48,14 @@ if ($sliders.length) {
     mouseenter: goTo,
   }, '.js-control')
 }
+
+const smoothScroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1000,
+  easing: 'easeInOutCubic',
+  speedAsDuration: true
+});
+
+$(document).on('click', '.js-top', function(e) {
+  e.preventDefault();
+  smoothScroll.animateScroll(0);
+});
