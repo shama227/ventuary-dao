@@ -77,3 +77,45 @@ body {
   }
 }
 
+
+.social-list{
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 0px;
+  margin: 0 -5px;
+  @include media-breakpoint-up(xs){
+    justify-content: center;
+    margin: 0;
+  }
+  &__wrapper{
+    padding-bottom: 15px;
+    @include media-breakpoint-up(xs){
+      padding-bottom: 50px;
+    }
+  }
+  &-item{
+    list-style: none;
+    padding: 2.5px;
+    @include media-breakpoint-up(xs){
+      padding: 10px;
+    }
+  }
+  &-link{
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    color: white;
+    text-decoration: none!important;
+    outline: none!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: .2s;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

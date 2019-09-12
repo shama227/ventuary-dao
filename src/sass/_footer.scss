@@ -35,46 +35,6 @@
   &__logo{
     padding-top: 10px;
   }
-  &__social{
-    list-style: none;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-left: 0px;
-    @include media-breakpoint-up(xs){
-      justify-content: center;
-    }
-    &__wrapper{
-      padding-bottom: 15px;
-      @include media-breakpoint-up(xs){
-        padding-bottom: 50px;
-      }
-    }
-  }
-  &__social-item{
-    list-style: none;
-    padding: 2.5px;
-    @include media-breakpoint-up(xs){
-      padding: 10px;
-    }
-  }
-  &__social-link{
-    width: 30px;
-    min-width: 30px;
-    height: 30px;
-    color: white;
-    text-decoration: none!important;
-    outline: none!important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.5;
-    transition: .2s;
-    &:hover{
-      opacity: 1;
-    }
-  }
   &__line{
     padding-top: 20px;
     padding-bottom: 18px;

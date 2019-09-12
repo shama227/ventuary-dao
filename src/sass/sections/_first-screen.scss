@@ -1,5 +1,22 @@
 .section--fs{
+  position: relative;
+  padding-top: 80px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &__follow-us{
+    display: none;
+    align-items: center;
+    margin-top: auto;
+    @include media-breakpoint-up(lg){
+      display: flex;
+    }
+    &__label{
+      color: white;
+      opacity: .7;
+      padding-right: 13px;
+    }
+  }
   &__header{
     margin-bottom: 20px;
   }
@@ -15,8 +32,8 @@
     }
   }
   &__text{
-    flex: 0 0 320px;
-    max-width: 320px;
+    flex: 0 0 315px;
+    max-width: 315px;
     padding-right: 25px;
     @include media-breakpoint-between(xl, xxl){
       align-items: flex-end;
