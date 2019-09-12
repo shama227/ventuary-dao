@@ -10,7 +10,6 @@
 
 // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-
 // try {
 //   window.Popper = require('popper.js').default;
 //   window.$ = window.jQuery = require('jquery');
@@ -34,3 +33,6 @@
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+
+window.$ = window.jQuery = require('./jquery-3.4.1.slim.min');
