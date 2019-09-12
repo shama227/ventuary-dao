@@ -112,8 +112,11 @@ if(document.getElementById('modal-guide-slider')){
 $(document).on('click', '.js-link--waves-keeper', function(e) {
   if(window.isShowModalGuideWavesKeeper){
     e.preventDefault();
-    Modal._jQueryInterface.call($('#guide'), Modal._config, this)
+    if($(window).width() >= 992){
+      Modal._jQueryInterface.call($('#guide'), Modal._config, this)
+    }else{
+      Modal._jQueryInterface.call($('#login-mobile'), Modal._config, this)
+    }
   }
 });
-// Modal._jQueryInterface.call($('#guide'), Modal._config, $('.js-link--waves-keeper')[0])
 
