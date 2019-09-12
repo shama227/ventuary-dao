@@ -3,6 +3,7 @@ require('./bootstrap');
 
 import { tns } from "tiny-slider/src/tiny-slider"
 import SmoothScroll from "smooth-scroll/dist/smooth-scroll.polyfills.min"
+import navbar from './navbar'
 
 let $sliders = $('.js-section-slider')
 if ($sliders.length) {
@@ -55,7 +56,13 @@ const smoothScroll = new SmoothScroll('a[href*="#"]', {
   speedAsDuration: true
 });
 
+const smoothScrollMoment = new SmoothScroll('a[href*="#"]', {
+  speed: 100
+});
+
 $(document).on('click', '.js-top', function(e) {
   e.preventDefault();
   smoothScroll.animateScroll(0);
 });
+
+navbar(smoothScrollMoment)

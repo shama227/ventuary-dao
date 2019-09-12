@@ -26,7 +26,7 @@
     <div class="container">
       <a class="navbar-brand" href="/"><img width="122" height="45" src="/img/logo.svg" alt="logo"></a>
       <div class="collapse navbar-collapse flex-grow-1">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav order-2 order-lg-1 mr-auto">
           <li class="nav-item">
             <!--Обязательно укажите data-label в точности, это распорка,
             чтобы не скокала строка при hover изменении font-weight-->
@@ -54,17 +54,17 @@
             </a>
           </li>
         </ul>
-        <div class="navbar-nav">
-          <a target="_blank" href="https://beta.ventuary.space/projects/featured" class="nav-link--waves-keeper">
-            <span class="nav-link--waves-keeper__label">Login with</span>
-            <div class="btn btn-primary">
+        <div class="navbar-nav navbar-nav--login order-1 order-lg-2">
+          <a target="_blank" href="https://beta.ventuary.space/projects/featured" class="nav-link--waves-keeper" data-label="Login">
+            <span class="nav-link--waves-keeper__label">Login<span class="d-none d-lg-inline"> with</span></span>
+            <div class="btn btn-primary d-none d-lg-inline-block">
               <img width="111" height="17" src="/img/icons/waves-keeper.svg" alt="waves-keeper">
             </div>
           </a>
         </div>
       </div>
       <div class="navbar-toggler ml-auto">
-        <button class="c-hamburger c-hamburger--htx" onclick="document.body.classList.toggle('navbar-active')">
+        <button class="c-hamburger c-hamburger--htx js-navbar-toggler">
           <span>toggle menu</span>
         </button>
       </div>

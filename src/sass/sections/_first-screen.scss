@@ -1,9 +1,12 @@
 .section--fs{
   position: relative;
-  padding-top: 80px;
+  padding-top: 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  @include media-breakpoint-up(lg){
+    padding-top: 80px;
+  }
   &__follow-us{
     display: none;
     align-items: center;
