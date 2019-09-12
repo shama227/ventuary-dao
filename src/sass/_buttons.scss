@@ -8,6 +8,7 @@
   border-radius: 2px;
   font-size: inherit;
   white-space: nowrap;
+  text-align: center;
 }
 .btn-block{
   display: block;
@@ -15,6 +16,10 @@
 .btn-primary{
   background: white;
   color: black;
+  text-decoration: none!important;
+  box-shadow: none!important;
+  outline: none!important;
+  border: none!important;
   transition: .2s ease;
   &:hover{
     opacity: .7;
@@ -23,3 +28,4 @@
     opacity: .5;
   }
 }
+

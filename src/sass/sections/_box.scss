@@ -72,7 +72,7 @@
       @include media-breakpoint-down(xs){
         &--left{
           transform: translate(-20px, 20px);
-          span{
+          span:first-child{
             display: block;
             position: absolute;
             background: $primary;
@@ -80,6 +80,18 @@
             right: -40px;
             left: 0;
             height: 20px;
+            z-index: -1;
+          }
+          span:last-child{
+            display: block;
+            position: absolute;
+            background: $primary;
+            bottom: -150px;
+            right: -40px;
+            left: auto;
+            width: 20px;
+            height: 170px;
+            z-index: -1;
           }
         }
       }

@@ -1,9 +1,7 @@
-
-
 @each $theme, $themeValue in $themes {
   $theme-colors_: map_get($themeValue, "theme-colors");
   $btns-primary: map_get($themeValue, "btns-primary");
-  @if($theme-colors_){
+  @if ($theme-colors_) {
     $primary_: map_get($theme-colors_, "primary");
     //.theme-#{$theme}{
     //  @if($primary_){
@@ -12,30 +10,43 @@
     //    //}
     //  }
     //}
-    @if($primary_){
-      .mark-#{$theme}{
+    @if ($primary_) {
+      .mark-#{$theme} {
         background: $primary_;
       }
-      .text-#{$theme}{
-        color: $primary_!important;
+      .text-#{$theme} {
+        color: $primary_ !important;
       }
-      .bg-#{$theme}{
-        background-color: $primary_!important;
+      .bg-#{$theme} {
+        background-color: $primary_ !important;
       }
 
-      .section--#{$theme}{
-        .section--faq{
-          &__list-link{
-            &:before{
-              background: $primary_!important;
+      .section--#{$theme} {
+        .section--faq {
+          &__list-link {
+            &:before {
+              background: $primary_ !important;
             }
           }
         }
+
+        .btn-primary {
+          background: $primary_ !important;
+          color: white;
+        }
+
+        hr {
+          border-color: $primary_ !important;
+        }
+      }
+
+      .btn-primary--#{$theme} {
+        background: $primary_ !important;
+        color: white;
       }
 
 
     }
-
 
 
   }
