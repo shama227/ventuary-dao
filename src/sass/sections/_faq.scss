@@ -11,7 +11,21 @@
       padding-left: 320px;
     }
   }
-
+  &__btn{
+    position: relative;
+    width: 100%;
+    flex: 0 0 220px;
+    max-width: 220px;
+    text-align: center;
+  }
+  &__btn-line{
+    position: relative;
+    width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0 20px;
+  }
   &__line{
     @include media-breakpoint-down(xs){
       display: block;
@@ -38,7 +52,7 @@
     }
   }
 
-  &__slider {
+  &__wrap-slider {
     display: none;
     position: relative;
     width: 100%;
@@ -54,6 +68,21 @@
       padding-top: 66px;
       flex: 0 0 550px;
       max-width: 550px;
+    }
+  }
+  &__slider:not(.tns-slider){
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    >div{
+      position: relative;
+      width: 100%;
+      flex: 0 0 390px;
+      max-width: 390px;
+      @include media-breakpoint-up(xl) {
+        flex: 0 0 550px;
+        max-width: 550px;
+      }
     }
   }
 
