@@ -1,0 +1,19 @@
+{% import "~components/social.njk" as social %}
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Ventuary DAO</title>
+  {% include "~layouts/head.njk" %}
+</head>
+<body>
+{% include "~layouts/header.njk" %}
+<main class="main">
+  {% block main %}{% endblock %}
+</main>
+{% include "~layouts/footer.njk" %}
+{% include "~components/modal-guide.njk" %}
+{% include "~components/modal-login-mobile.njk" %}
+
+{% include "~layouts/script.njk" %}
+</body>
+</html>

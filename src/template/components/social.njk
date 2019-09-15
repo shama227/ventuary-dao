@@ -1,0 +1,14 @@
+{% macro socialItem(href, src, alt) %}
+  <li class="social-list-item">
+    <a target="_blank" href="{{ href }}" class="social-list-link">
+      <img src="{{ src }}" alt="{{ alt }}">
+    </a>
+  </li>
+{% endmacro %}
+{% macro socialList(items, listClass='') %}
+  <ul class="social-list {{ listClass }}">
+    {% for item in items %}
+      {{ socialItem(item.href, item.src, item.alt) }}
+    {% endfor %}
+  </ul>
+{% endmacro %}

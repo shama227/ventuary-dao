@@ -1,0 +1,56 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img width="122" height="45" src="/img/logo.svg" alt="logo"></a>
+      <div class="collapse navbar-collapse flex-grow-1">
+        <ul class="navbar-nav order-2 order-lg-1 mr-auto">
+          <li class="nav-item">
+            <!--Обязательно укажите data-label в точности, это распорка,
+            чтобы не скакала строка при hover изменении font-weight-->
+            <a class="nav-link" target="_blank"
+               href="https://blog.wavesplatform.com/waves-labs-to-use-dao-as-sandbox-for-grant-programs-d4b58413cb50"
+               data-label="About">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://beta.ventuary.space/community"
+               data-label="Community">
+              Community
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://beta.ventuary.space/projects/featured"
+               data-label="Projects">
+              Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://beta.ventuary.space/contests/featured"
+               data-label="Contests">
+              Contests
+            </a>
+          </li>
+        </ul>
+        <div class="navbar-nav navbar-nav--login order-1 order-lg-2">
+          <a target="_blank" href="https://beta.ventuary.space/projects/featured"
+             class="nav-link--waves-keeper js-link--waves-keeper" data-label="Login">
+                        <span class="nav-link--waves-keeper__label">Login<span
+                            class="d-none d-lg-inline"> with</span></span>
+            <div class="btn btn-primary d-none d-lg-inline-block">
+              <img width="111" height="17" src="/img/icons/waves-keeper.svg" alt="waves-keeper">
+            </div>
+          </a>
+        </div>
+        <div class="navbar-nav order-3 py-3 px-3 px-xs-2 d-lg-none">
+          {{ social.socialList(socials, 'justify-content-start') }}
+        </div>
+      </div>
+      <div class="navbar-toggler ml-auto">
+        <button class="c-hamburger c-hamburger--htx js-navbar-toggler">
+          <span>toggle menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
