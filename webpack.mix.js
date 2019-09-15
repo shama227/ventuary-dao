@@ -1,10 +1,8 @@
 const mix = require('laravel-mix');
 const path = require('path');
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs')
-const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const vars = require('./src/vars')
 /*
  |--------------------------------------------------------------------------
@@ -68,11 +66,6 @@ mix
                 }
               }]
             },
-            // {
-            //   test: /\.html$/,
-            //   include: path.resolve(__dirname, 'src/html'),
-            //   use: ['raw-loader']
-            // },
           ]
       },
       plugins: [

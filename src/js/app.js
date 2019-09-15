@@ -68,10 +68,12 @@ $(document).on('click', '.js-top', function(e) {
 
 navbar(smoothScrollMoment)
 
+let nGS
 if(document.getElementById('modal-guide-slider')){
-  let slide = tns({
+  nGS = tns({
     "loop": false,
     "autoWidth": false,
+    "autoHeight": false,
     "items": 1,
     "gutter": 0,
     "touch": false,
@@ -85,7 +87,7 @@ if(document.getElementById('modal-guide-slider')){
     "container": '#modal-guide-slider',
     "speed": 400
   })
-  slide.events.on('indexChanged', function (v) {
+  nGS.events.on('indexChanged', function (v) {
     let $prev = $('.js-control-guide[data-to="prev"]')
     let $next = $('.js-control-guide[data-to="next"]')
     if(v.index === 0){
@@ -93,7 +95,7 @@ if(document.getElementById('modal-guide-slider')){
     }else{
       $prev.removeClass('d-none')
     }
-    if(v.index === 2){
+    if(v.index === 3){
       $next.addClass('d-none')
     }else{
       $next.removeClass('d-none')
@@ -103,12 +105,11 @@ if(document.getElementById('modal-guide-slider')){
     click: function (){
       let to = $(this).data('to')
       if(to !== undefined){
-        slide.goTo(to);
+        nGS.goTo(to);
       }
     },
   }, '.js-control-guide')
 }
-
 $(document).on('click', '.js-link--waves-keeper', function(e) {
   if(window.isShowModalGuideWavesKeeper){
     e.preventDefault();
