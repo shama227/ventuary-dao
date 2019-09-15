@@ -1,0 +1,6 @@
+{% macro img(src, offset) %}
+  <div class="r-img">
+    <div class="r-offset" style="padding-top: {{ offset }}%;"></div>
+    <div class="r-bg bg-contain" style="background-image: url({{ src }});"></div>
+  </div>
+{% endmacro %}
