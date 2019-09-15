@@ -9,6 +9,9 @@ export default function navbar(smoothScrollMoment){
     }
   });
 
+  $(document).on('click', 'a[href*="#"]', function(e) {
+    $('body').removeClass('navbar-active');
+  });
 
   let scroll = $(window).scrollTop();
   let direction = 1; // direction === 1 - bottom, direction === -1 - top

@@ -99,11 +99,9 @@ mix
 .disableNotifications()
 .browserSync({
     files: [
-        'src/**/*.js',
-        'src/**/*.css',
-        'src/**/*.scss',
-        'src/**/*.njk',
-        'src/**/*.html'
+        'dist/**/*.js',
+        'dist/**/*.css',
+        'dist/**/*.html'
     ],
     proxy:
         {

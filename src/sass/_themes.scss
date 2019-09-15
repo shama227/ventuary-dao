@@ -56,6 +56,12 @@
         color: white;
       }
 
+      .mobile-tabs__link--#{$theme} {
+        &:hover{
+          background: $primary_ !important;
+        }
+      }
+
       .section--fs__nav-link--#{$theme}{
         &:before {
           background: $primary_ !important;

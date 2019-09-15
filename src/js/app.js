@@ -120,4 +120,27 @@ $(document).on('click', '.js-link--waves-keeper', function(e) {
     }
   }
 });
+function invitesActive(){
+  let $th = $(this)
+  let $ul = $th.find('ul')
+  let $li = $ul.find('>li')
+  let i = 0
+  $li.each(function () {
+    let r = (i*40) + 'px'
+    $(this).css({
+      left: r,
+      top: r,
+    })
+    i++
+  })
+  let t = (i * 40) + 'px'
+  $ul.css({
+    width: t,
+    height: t,
+  })
+}
+$(document).on({
+  mouseenter: invitesActive,
+  // click: invitesActive
+}, '.js-invites');
 

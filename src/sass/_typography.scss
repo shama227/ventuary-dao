@@ -96,7 +96,6 @@ body {
     }
   }
   &-item{
-    list-style: none;
     padding: 2.5px;
     @include media-breakpoint-up(xs){
       padding: 10px;

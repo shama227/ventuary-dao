@@ -1,0 +1,35 @@
+.mobile-tabs{
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  @include media-breakpoint-down(xs){
+    display: flex;
+  }
+  margin: 0;
+  padding: 0 55px 0 0;
+  background: #000;
+  list-style: none;
+  &__item{
+    display: block;
+    flex-grow: 1;
+  }
+  &__link{
+    padding: 24px 5px 5px 5px;
+    height: 69px;
+    color: white;
+    text-decoration: none!important;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+      background: $primary;
+    }
+  }
+}
