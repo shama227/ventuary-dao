@@ -90,6 +90,7 @@ if(document.getElementById('modal-guide-slider')){
   nGS.events.on('indexChanged', function (v) {
     let $prev = $('.js-control-guide[data-to="prev"]')
     let $next = $('.js-control-guide[data-to="next"]')
+    let $dismiss = $('.js-dismiss-guide')
     if(v.index === 0){
       $prev.addClass('d-none')
     }else{
@@ -97,10 +98,13 @@ if(document.getElementById('modal-guide-slider')){
     }
     if(v.index === 3){
       $next.addClass('d-none')
+      $dismiss.removeClass('d-none')
     }else{
       $next.removeClass('d-none')
+      $dismiss.addClass('d-none')
     }
   });
+
   $(document).on({
     click: function (){
       let to = $(this).data('to')
@@ -109,6 +113,13 @@ if(document.getElementById('modal-guide-slider')){
       }
     },
   }, '.js-control-guide')
+    .on('click', '.js-dismiss-guide', function () {
+      setTimeout(function () {
+        nGS.goTo(0);
+        $('.js-control-guide[data-to="next"]').removeClass('d-none')
+        $('.js-dismiss-guide').addClass('d-none')
+      }, 300)
+    })
 }
 $(document).on('click', '.js-link--waves-keeper', function(e) {
   if(window.isShowModalGuideWavesKeeper){
