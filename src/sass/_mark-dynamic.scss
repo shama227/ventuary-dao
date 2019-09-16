@@ -1,0 +1,46 @@
+.mark-dynamic{
+  position: relative;
+  display: inline-block;
+  &__wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    background: $primary;
+    animation-delay: 2s;
+    display: none;
+    @include media-breakpoint-up(sm){
+      display: block;
+    }
+  }
+  &:not(.stop){
+    .mark-dynamic{
+      &__wrapper{
+        animation: widthFullAnimate 1.8s linear;
+      }
+    }
+  }
+  &__content{
+    color: black;
+    white-space: nowrap;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+}
+@keyframes widthFullAnimate {
+  0%{
+    width: 0;
+  }
+  40%{
+    width: 100%;
+  }
+  60%{
+    width: 100%;
+  }
+  100%{
+    width: 0;
+  }
+}

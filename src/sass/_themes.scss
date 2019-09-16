@@ -14,6 +14,13 @@
       .mark-#{$theme} {
         background: $primary_;
       }
+      .mark-#{$theme}{
+        .mark-dynamic {
+          &__wrapper{
+            background: $primary_;
+          }
+        }
+      }
       .text-#{$theme} {
         color: $primary_ !important;
       }
@@ -30,9 +37,17 @@
           }
         }
 
+        .text-primary {
+          color: $primary_ !important;
+        }
+
         .btn-primary {
           background: $primary_ !important;
           color: white;
+        }
+
+        .bg-primary {
+          background: $primary_ !important;
         }
 
         .btn-outline-primary{
@@ -70,5 +85,10 @@
     }
 
 
+  }
+}
+.section--outline__line__content{
+  .text-primary{
+    color: black!important;
   }
 }

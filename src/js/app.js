@@ -4,6 +4,7 @@ require('./bootstrap');
 import { tns } from "tiny-slider/src/tiny-slider"
 import SmoothScroll from "smooth-scroll/dist/smooth-scroll.polyfills.min"
 import navbar from './navbar'
+import markDynamic from './mark-dynamic'
 
 let $sliders = $('.js-section-slider')
 if ($sliders.length) {
@@ -154,4 +155,10 @@ $(document).on({
   mouseenter: invitesActive,
   // click: invitesActive
 }, '.js-invites');
+
+$('[data-copy]').each(function () {
+  $($(this).attr('data-copy')).clone().attr('id', '').appendTo(this)
+});
+
+markDynamic()
 
