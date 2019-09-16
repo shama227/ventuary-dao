@@ -15,6 +15,7 @@ if ($sliders.length) {
     let $controls = $th.find('.js-control')
     $controls.attr('data-index', i)
     let slider = ($slider[0])?tns({
+      "lazyload": false,
       "autoWidth": false,
       "items": 1,
       "gutter": 0,
@@ -160,5 +161,6 @@ $('[data-copy]').each(function () {
   $($(this).attr('data-copy')).clone().attr('id', '').appendTo(this)
 });
 
+window.markDynamic = markDynamic
 markDynamic()
 

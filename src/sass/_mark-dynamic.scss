@@ -9,17 +9,17 @@
     height: 100%;
     overflow: hidden;
     background: $primary;
-    animation-delay: 2s;
+    animation: widthFullAnimate 1s linear;
     display: none;
     @include media-breakpoint-up(sm){
       display: block;
     }
   }
-  &:not(.stop){
-    .mark-dynamic{
-      &__wrapper{
-        animation: widthFullAnimate 1.8s linear;
-      }
+  &.stop{
+    .mark-dynamic__wrapper{
+      width: 0;
+      animation: none;
+      animation-play-state: paused;
     }
   }
   &__content{

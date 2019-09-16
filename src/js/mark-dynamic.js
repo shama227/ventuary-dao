@@ -1,31 +1,33 @@
 
-export default function markDynamic(){
+export default function markDynamic(durationDefault = 1.6, randomDurationStart = 1.6, randomDurationEnd = 3){
   function randomIntFromInterval(min, max) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    return Math.ceil(Math.random() * (max - min + 1) + min);
   }
-  function play() {
+  function play(cb) {
     $marks.addClass('stop')
     window.requestAnimationFrame(function(time) {
       window.requestAnimationFrame(function(time) {
         $marks.removeClass('stop')
+        if(cb){
+          cb()
+        }
       });
     });
   }
   let $marks = $('.js-mark-dynamic');
-  let instanceTimeout
-  let durationDefault = 1.6
-  let randomDurationStart = 1.2
-  let randomDurationEnd = durationDefault
-  function calcWorker(duration = durationDefault) {
+  function calcWorker(duration) {
+    $marks.addClass('stop')
+    clearTimeout(window.markDynamicInstanceTimeout)
     let delay = 0
     $marks.each(function (i) {
       let $th = $(this)
       let content = $th.text().trim()
       delay += duration;
       if(i > 1){
-        let r = randomIntFromInterval(9, 15) / 10;
+        let r = randomIntFromInterval((duration*0.75) * 10, (duration*0.95) * 10) / 10;
         delay -= r
       }
+      delay = (Math.ceil(delay * 100) / 100)
       let $w = $th.find('.mark-dynamic__wrapper');
       if($w.length){
         $w.css({
@@ -37,13 +39,14 @@ export default function markDynamic(){
       }
     });
     delay += duration
-    clearTimeout(instanceTimeout)
-    instanceTimeout = setTimeout(function () {
-      calcWorker(randomIntFromInterval(randomDurationStart*10, randomDurationEnd*10) / 10)
-      setTimeout(play,0)
-    }, delay * 1000)
+    play(function () {
+      window.markDynamicInstanceTimeout = setTimeout(function () {
+        calcWorker(randomIntFromInterval(randomDurationStart*10, randomDurationEnd*10) / 10)
+        play()
+      }, delay * 1000 + 100)
+    })
   }
   if($marks.length && $(window).width() >= 576){
-    calcWorker()
+    calcWorker(durationDefault)
   }
 }
