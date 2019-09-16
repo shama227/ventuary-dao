@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/dist
 /.idea
 package-lock.json
 .env
