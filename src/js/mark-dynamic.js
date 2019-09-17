@@ -1,5 +1,5 @@
 
-export default function markDynamic(durationDefault = 1.6, randomDurationStart = 1.6, randomDurationEnd = 3){
+export default function markDynamic(durationDefault = 1.4, randomDurationStart = 1.4, randomDurationEnd = 2){
   function randomIntFromInterval(min, max) { // min and max included
     return Math.ceil(Math.random() * (max - min + 1) + min);
   }
