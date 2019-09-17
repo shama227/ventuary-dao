@@ -52,9 +52,10 @@
             opacity: 1;
             pointer-events: auto;
           }
+          //Изменяя transition тут илзмени transition в navbar.js в блоке navigation
           transition: .5s ease;
-          .section--fs__nav-link{
-            transition: .5s ease;
+          .section--fs__nav-link, .section--fs__nav-label{
+            transition: .4s ease;
           }
           &:not(.active){
             position: absolute!important;
@@ -65,7 +66,9 @@
           }
           &.active{
             .section--fs__nav-label{
-              display: none;
+              visibility: hidden;
+              opacity: 0;
+              pointer-events: none;
             }
             .section--fs__nav-link{
               &:before, &:after{
@@ -79,6 +82,11 @@
             bottom: 119px!important;
             @media (min-width: 1790px) {
               right: calc(50% - 885px)!important;
+            }
+            .section--fs__nav-label{
+              font-size: 0!important;
+              padding-left: 0!important;
+              padding-right: 0!important;
             }
             .section--fs__nav-link{
               font-size: 16px!important;

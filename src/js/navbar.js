@@ -135,7 +135,7 @@ export default function navbar(smoothScrollMoment){
   let $navFix = $('#navigation-fixed');
   let $nav = $('#section--fs__nav__wrapper');
   let offsetFromInvites = 23
-  let transition = 300 //.3s
+  let transition = 500 //.5s
 
   function calcFixedPosition ($from, $to) {
     let pos = $from.offset()
