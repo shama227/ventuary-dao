@@ -1,47 +1,11 @@
 export default function navbar(smoothScrollMoment){
 
-  /* navbar */
-  $(document).on('click', '.js-navbar-toggler', function(e) {
-    e.preventDefault();
-    let $b = $('body');
-    $b.toggleClass('navbar-active');
-    if(!$b.hasClass('navbar-fixed')){
-      smoothScrollMoment.animateScroll(0);
-    }
-  });
-
-  $(document).on('click', 'a[href*="#"]', function(e) {
-    $('body').removeClass('navbar-active');
-  });
-
-  let scroll = $(window).scrollTop();
-  let direction = 1; // direction === 1 - bottom, direction === -1 - top
-
-  if($(window).width() < 992){
-    $('body').addClass('sd-top');
-  }
-  toggleNav()
-  function toggleNav () {
-    if($(window).width() < 992){
-      if(scroll > 100){
-        $('body').addClass('navbar-fixed');
-      }else{
-        $('body').removeClass('navbar-fixed');
-      }
-      if(direction === -1){
-        $('body').addClass('sd-top'); //scroll direction top
-      }else{
-        $('body').removeClass('sd-top');
-      }
-    }
-  }
-  /* navbar */
-
-
-  /* section-theme AND navigation */
+  /* section-theme AND navigation AND navbar */
   let $invites = $('#invites');
   let windowHeight = 0
-  /* section-theme AND navigation */
+  let fsHeight = 0
+  /* section-theme AND navigation AND navbar */
+
 
   /* section-theme */
   let $themeSections = $('.js-section-theme')
@@ -50,6 +14,7 @@ export default function navbar(smoothScrollMoment){
   calcThSec()
   function calcThSec(){
     windowHeight = $(window).height()
+    fsHeight = $('#first-screen').height()
     $themeSections.each(function () {
       let $th = $(this)
       let name = $th.data('theme')
@@ -101,6 +66,50 @@ export default function navbar(smoothScrollMoment){
   }
   /* section-theme */
 
+  /* navbar */
+  $(document).on('click', '.js-navbar-toggler', function(e) {
+    e.preventDefault();
+    let $b = $('body');
+    $b.toggleClass('navbar-active');
+    if(!$b.hasClass('navbar-fixed')){
+      smoothScrollMoment.animateScroll(0);
+    }
+  });
+
+  $(document).on('click', 'a[href*="#"]', function(e) {
+    $('body').removeClass('navbar-active');
+  });
+
+  let scroll = $(window).scrollTop();
+  let direction = 1; // direction === 1 - bottom, direction === -1 - top
+
+  if($(window).width() < 992){
+    $('body').addClass('sd-top');
+  }
+  toggleNav()
+  function toggleNav (st) {
+    if($(window).width() < 992){
+      if(scroll > 100){
+        $('body').addClass('navbar-fixed');
+      }else{
+        $('body').removeClass('navbar-fixed');
+      }
+      if(direction === -1){
+        $('body').addClass('sd-top'); //scroll direction top
+      }else{
+        $('body').removeClass('sd-top');
+      }
+    }
+    if($(window).width() < 576){
+      if(st > fsHeight){
+        $('#mobile-tabs').addClass('active')
+      } else {
+        $('#mobile-tabs').removeClass('active')
+      }
+    }
+  }
+  /* navbar */
+
   $(window).on('scroll', function(e) {
     /* navbar */
     let st = $(this).scrollTop()
@@ -110,7 +119,7 @@ export default function navbar(smoothScrollMoment){
       direction = -1
     }
     scroll = st
-    toggleNav()
+    toggleNav(st)
     /* navbar */
 
     /* navigation */
