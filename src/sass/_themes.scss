@@ -11,6 +11,13 @@
     //  }
     //}
     @if ($primary_) {
+
+      .invites[data-theme="#{$theme}"]{
+        ul > li{
+          background: $primary_;
+        }
+      }
+
       .mark-#{$theme} {
         background: $primary_;
       }
@@ -72,7 +79,7 @@
       }
 
       .mobile-tabs__link--#{$theme} {
-        &:hover{
+        &.active, &:hover{
           background: $primary_ !important;
         }
       }

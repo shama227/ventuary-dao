@@ -68,7 +68,6 @@ $(document).on('click', '.js-top', function(e) {
   smoothScroll.animateScroll(0);
 });
 
-navbar(smoothScrollMoment)
 
 let nGS
 if(document.getElementById('modal-guide-slider')){
@@ -154,13 +153,18 @@ function invitesActive(){
 }
 $(document).on({
   mouseenter: invitesActive,
-  // click: invitesActive
-}, '.js-invites');
+}, '#invites');
 
 $('[data-copy]').each(function () {
   $($(this).attr('data-copy')).clone().attr('id', '').appendTo(this)
 });
+$('[data-active]').each(function () {
+  $($(this).attr('data-active')).addClass($(this).attr('data-active-class')||'active')
+});
 
+navbar(smoothScrollMoment)
+
+// Хук для дизайнера, изменить анимацию можно вызвав в консоли markDynamic(1.4,1.4,2)
 window.markDynamic = markDynamic
 markDynamic()
 
