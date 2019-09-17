@@ -4,6 +4,7 @@ export default function navbar(smoothScrollMoment){
   let $invites = $('#invites');
   let windowHeight = 0
   let fsHeight = 0
+  let footerTop = 0
   /* section-theme AND navigation AND navbar */
 
 
@@ -14,6 +15,7 @@ export default function navbar(smoothScrollMoment){
   calcThSec()
   function calcThSec(){
     windowHeight = $(window).height()
+    footerTop = $('#footer').offset().top
     fsHeight = $('#first-screen').height()
     $themeSections.each(function () {
       let $th = $(this)
@@ -101,7 +103,8 @@ export default function navbar(smoothScrollMoment){
       }
     }
     if($(window).width() < 576){
-      if(st > fsHeight){
+      console.log(st, footerTop)
+      if(st > fsHeight && (st + windowHeight) < footerTop){
         $('#mobile-tabs').addClass('active')
       } else {
         $('#mobile-tabs').removeClass('active')
