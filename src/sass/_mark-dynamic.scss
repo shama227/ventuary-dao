@@ -1,6 +1,9 @@
 .mark-dynamic{
   position: relative;
   display: inline-block;
+  @include media-breakpoint-up(sm){
+    background-color: transparent!important;
+  }
   &__wrapper{
     position: absolute;
     top: 0;

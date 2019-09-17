@@ -53,9 +53,13 @@ export default function navbar(smoothScrollMoment){
     $themeSections.each(function () {
       let $th = $(this)
       let name = $th.data('theme')
+      let $line = $th.find('.js-section-theme__line')
       themeSections[name] = {
         name: name,
         $elem: $th,
+        $line: $line,
+        lineTop: $line.offset().top,
+        lineBottom: $line.offset().top + $line.height(),
         top: $th.offset().top
       }
     });
@@ -65,9 +69,15 @@ export default function navbar(smoothScrollMoment){
   toggleTheme()
   function toggleTheme(st = $(window).scrollTop()){
     let themeSelected
+    let $line
+    let bottomWindowPosition = (st + windowHeight)
+
     for(let theme in themeSections){
-      if((st + windowHeight) >= themeSections[theme].top){
+      if(bottomWindowPosition >= themeSections[theme].top){
         themeSelected = themeSections[theme]
+      }
+      if($(window).width() >= 992 && bottomWindowPosition >= themeSections[theme].lineTop && bottomWindowPosition < themeSections[theme].lineBottom){
+        $line = themeSections[theme].$line
       }
     }
     if(themeSelected){
@@ -77,6 +87,15 @@ export default function navbar(smoothScrollMoment){
     } else {
       $invites.attr('data-theme', '')
       $sectionLinks.removeClass('active')
+    }
+
+    if($(window).width() >= 992){
+      if($line){
+        $('.js-section-theme__line').not($line).removeClass('active')
+        $line.addClass('active')
+      }else{
+        $('.js-section-theme__line').removeClass('active')
+      }
     }
 
   }
@@ -142,7 +161,6 @@ export default function navbar(smoothScrollMoment){
         }
       } else {
         if(iTop < nBottom){
-          console.log(iTop, nBottom)
           calcFixedPosition($nav, $navFix);
           $navFix.removeClass('move')
           setTimeout(function () {
