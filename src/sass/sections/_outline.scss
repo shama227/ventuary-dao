@@ -2,7 +2,6 @@
   position: relative;
   padding-right: 15px;
   @include media-breakpoint-up(lg){
-    min-height: 800px;
     padding-right: 0;
   }
   &__content{
@@ -14,6 +13,9 @@
     }
     @include media-breakpoint-up(xl){
       padding-top: 0px;
+    }
+    @include media-breakpoint-up(lg){
+      min-height: 800px;
     }
   }
   &__line{
