@@ -48,6 +48,11 @@
           color: $primary_ !important;
         }
 
+        a.text-primary:hover,
+        a.text-primary:focus{
+          color: $primary_ !important;
+        }
+
         .btn-primary {
           background: $primary_ !important;
           color: white;
