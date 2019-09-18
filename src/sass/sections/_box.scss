@@ -30,6 +30,7 @@
     position: relative;
     width: 100%;
     padding: 30px 30px 20px 30px;
+    color: #2D2D2D;
     @include media-breakpoint-up(sm){
       width: 430px;
       min-width: 430px;
@@ -49,7 +50,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: #2D2D2D;
+      background: #fff;
     }
     &__img{
       background-size: cover;
