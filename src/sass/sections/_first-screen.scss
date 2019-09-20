@@ -240,6 +240,7 @@
       width: 56.25vw;
       height: auto;
       z-index: -1;
+      opacity: .5;
     }
     @include media-breakpoint-up(md){
       flex: 0 0 315px;
