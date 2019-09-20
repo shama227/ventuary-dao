@@ -161,6 +161,9 @@
       }
     }
   }
+  &__follow-us-container {
+    margin-bottom: 30px;
+  };
   &__follow-us{
     width: 100%;
     flex: 0 0 59%;
@@ -222,6 +225,7 @@
       max-width: 48%;
       padding-top: 0;
       padding-right: 0;
+      padding-bottom: 30px;
     }
     @include media-breakpoint-up(fhd){
       flex: 0 0 39%;
