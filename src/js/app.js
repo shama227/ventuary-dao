@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('./bootstrap');
 
+import main, { isUserAuthenticated } from './main';
 import { tns } from "tiny-slider/src/tiny-slider"
 import SmoothScroll from "smooth-scroll/dist/smooth-scroll.polyfills.min"
 import navbar from './navbar'
@@ -122,14 +123,18 @@ if(document.getElementById('modal-guide-slider')){
       }, 300)
     })
 }
-$(document).on('click', '.js-link--waves-keeper', function(e) {
+$(document).on('click', '.js-link--waves-keeper', async function(e) {
+  e.preventDefault();
+  await isUserAuthenticated();
+
   if(window.isShowModalGuideWavesKeeper){
-    e.preventDefault();
     if($(window).width() >= 992){
       Modal._jQueryInterface.call($('#guide'), Modal._config, this)
     }else{
       Modal._jQueryInterface.call($('#login-mobile'), Modal._config, this)
     }
+  } else {
+    window.open('/projects/feed');
   }
 });
 function invitesActive(){
@@ -166,5 +171,6 @@ navbar(smoothScrollMoment)
 
 // Хук для дизайнера, изменить анимацию можно вызвав в консоли markDynamic(1.4,1.4,2)
 window.markDynamic = markDynamic
-markDynamic()
+markDynamic();
 
+main();
