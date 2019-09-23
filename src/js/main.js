@@ -25,5 +25,16 @@ export async function isUserAuthenticated () {
 
   window.isShowModalGuideWavesKeeper = role === "anonymous";
 }
+
+function checkIncomingParams () {
+  const url = new URL(window.location.href);
+  const guideLink = url.searchParams.get('openGuide');
+
+  if (guideLink === '1') {
+    document.querySelector('#keeper-login-link').click();
+  }
+}
   
-export default function main () { }
+export default function main () {
+  checkIncomingParams();
+}
