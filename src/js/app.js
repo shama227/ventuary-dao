@@ -134,7 +134,7 @@ $(document).on('click', '.js-link--waves-keeper', async function(e) {
       Modal._jQueryInterface.call($('#login-mobile'), Modal._config, this)
     }
   } else {
-    window.open('/projects/feed');
+    window.open('/projects/featured');
   }
 });
 function invitesActive(){
